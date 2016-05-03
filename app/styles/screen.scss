@@ -1,0 +1,52 @@
+
+
+body {
+  margin: 0;
+  background-color: lightgrey;
+}
+
+label {
+  display: block;
+}
+
+.form-field {
+  margin-bottom: 20px;
+  max-width: 290px;
+  width:93%;
+}
+.form-field.center {
+  text-align: center;
+}
+
+input[type="text"], select {
+  padding: 10px;
+  width: 100%;
+}
+
+/* -----------------------------------------------------------------------------
+  BUTTONS
+----------------------------------------------------------------------------- */
+.acc-button {
+  margin-bottom: 48px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px;
+  padding: 12px 24px;
+  color: #67b5d1;
+  background: none;
+  font-size: 14px;
+  border: solid 2px #67b5d1;
+  box-shadow: none;
+  border-radius: 20px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.acc-button:focus {
+  outline: none;
+}
+
+.acc-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

@@ -1,0 +1,28 @@
+<%= htmlWebpackPlugin.options.jsp1 %>
+<%= htmlWebpackPlugin.options.jsp2 %>
+<%= htmlWebpackPlugin.options.jsp3 %>
+<%= htmlWebpackPlugin.options.jsp4 %>
+
+<% if (htmlWebpackPlugin.options.baseHref) { %>
+<base href="<%= htmlWebpackPlugin.options.baseHref %>" />
+<% } %>
+<% for (var css in htmlWebpackPlugin.files.css) { %>
+<link href="<%= htmlWebpackPlugin.options.addBaseHrefToScripts + htmlWebpackPlugin.files.css[css].replace(/^.*(\\|\/|\:)/, '') %>" rel="stylesheet">
+<% } %>
+
+<div class="container-fluid">
+    <ui-view></ui-view>
+</div>
+
+<% if (htmlWebpackPlugin.options.window) { %>
+<script>
+    <% for (var varName in htmlWebpackPlugin.options.window) { %>
+    window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
+    <% } %>
+    var globalOrganisationId = "<%= htmlWebpackPlugin.options.displyOrgID %>";
+</script>
+<% } %>
+
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="<%= htmlWebpackPlugin.options.addBaseHrefToScripts + htmlWebpackPlugin.files.chunks[chunk].entry.replace(/^.*(\\|\/|\:)/, '') %>"></script>
+<% } %>

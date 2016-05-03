@@ -1,0 +1,17 @@
+
+#header {
+  padding:20px;
+  margin:0;
+  width: auto;
+  background-color: lightblue;
+}
+
+.header-content {
+  max-width: 1200px;
+}
+@media all and (min-width: 425px) {
+  .header-content {
+    width: 90%;
+    margin: auto;
+  }
+}

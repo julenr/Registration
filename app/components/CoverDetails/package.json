@@ -1,0 +1,6 @@
+{
+  "name": "CoverDetails",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./CoverDetails.jsx"
+}

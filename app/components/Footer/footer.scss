@@ -1,0 +1,24 @@
+
+#footer {
+  margin: 0 0 0 0;
+  width: auto;
+
+}
+
+.footer-content {
+  max-width: 1200px;
+  text-align: center;
+}
+@media all and (min-width: 425px) {
+  .footer-content {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.footer-link {
+  display:inline-block;;
+  color: blue;
+  width: 20%;
+  margin:auto;
+}
