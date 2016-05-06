@@ -1,4 +1,10 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .login-content {
   padding: 20px;
+}
+
+a {
+  color: $acc_blue_2;
 }

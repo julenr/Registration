@@ -1,8 +1,9 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 #footer {
-  margin: 0 0 0 0;
+  margin: 0;
   width: auto;
-
 }
 
 .footer-content {
@@ -18,7 +19,10 @@
 
 .footer-link {
   display:inline-block;;
-  color: blue;
   width: 20%;
   margin:auto;
+}
+.footer-link a, .footer-link a:visited {
+  font-size: 0.9rem;
+  color: $acc_blue_2;
 }

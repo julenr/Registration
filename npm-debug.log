@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'server' ]
+2 info using npm@3.3.12
+3 info using node@v5.5.0
+4 verbose run-script [ 'preserver', 'server', 'postserver' ]
+5 info lifecycle ACCRegistration@0.1.0~preserver: ACCRegistration@0.1.0
+6 silly lifecycle ACCRegistration@0.1.0~preserver: no script for preserver, continuing
+7 info lifecycle ACCRegistration@0.1.0~server: ACCRegistration@0.1.0
+8 verbose lifecycle ACCRegistration@0.1.0~server: unsafe-perm in lifecycle true
+9 verbose lifecycle ACCRegistration@0.1.0~server: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\RojoJ\WebstormProjects\myacc\poc\MyACC-Template\node_modules\.bin;H:\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;H:\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Microsoft Application Virtualization Client;C:\Program Files (x86)\QuickTime\QTSystem;C:\Program Files (x86)\Enterprise Vault\EVClient;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Users\RojoJ\AppData\Roaming\npm;C:\Program Files\Apache\apache-maven-3.3.9\bin;C:\Users\RojoJ\AppData\Local\atom\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+10 verbose lifecycle ACCRegistration@0.1.0~server: CWD: C:\Users\RojoJ\WebstormProjects\myacc\poc\MyACC-Template
+11 silly lifecycle ACCRegistration@0.1.0~server: Args: [ '/d /s /c', 'babel-node server/server.js' ]
+12 silly lifecycle ACCRegistration@0.1.0~server: Returned: code: 1  signal: null
+13 info lifecycle ACCRegistration@0.1.0~server: Failed to exec server script
+14 verbose stack Error: ACCRegistration@0.1.0 server: `babel-node server/server.js`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:232:16)
+14 verbose stack     at emitTwo (events.js:100:13)
+14 verbose stack     at EventEmitter.emit (events.js:185:7)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:100:13)
+14 verbose stack     at ChildProcess.emit (events.js:185:7)
+14 verbose stack     at maybeClose (internal/child_process.js:821:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid ACCRegistration@0.1.0
+16 verbose cwd C:\Users\RojoJ\WebstormProjects\myacc\poc\MyACC-Template
+17 error Windows_NT 6.1.7601
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "server"
+19 error node v5.5.0
+20 error npm  v3.3.12
+21 error code ELIFECYCLE
+22 error ACCRegistration@0.1.0 server: `babel-node server/server.js`
+22 error Exit status 1
+23 error Failed at the ACCRegistration@0.1.0 server script 'babel-node server/server.js'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the ACCRegistration package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     babel-node server/server.js
+23 error You can get their info via:
+23 error     npm owner ls ACCRegistration
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

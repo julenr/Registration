@@ -102,13 +102,7 @@ if(TARGET === 'start' || !TARGET) {
       new HtmlwebpackPlugin({
         template: './templates/index.webpack.ejs',
         title: APP_TITLE,
-        unsupportedBrowser: true,
-        mobile: true,
-        window: {
-          env: {
-            apiHost: ''
-          }
-        }
+        unsupportedBrowser: true
       }),
       new webpack.DefinePlugin({
         '__DEV__': JSON.stringify(JSON.parse('true'))
@@ -166,7 +160,6 @@ if(TARGET === 'build') {
         title: APP_TITLE,
         baseHref: '<%= request.getContextPath() %>',
         addBaseHrefToScripts: '<%= request.getContextPath() %>/build/', //This is for JetSpeed that currently does not add BaseHref
-        mobile: true,
         googleAnalytics: {
           active: false,
           trackingId: 'UA-XXXX-XX',
@@ -244,13 +237,7 @@ if(TARGET === 'develop') {
       new HtmlwebpackPlugin({
         title: APP_TITLE,
         template: './templates/index.develop.ejs',
-        unsupportedBrowser: true,
-        mobile: true,
-        window: {
-          env: {
-            apiHost: ''
-          }
-        }
+        unsupportedBrowser: true
       }),
       new webpack.optimize.UglifyJsPlugin({
         compress: {

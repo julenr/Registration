@@ -11,7 +11,6 @@
 //
 //
 
-
 import React from 'react';
 
 // SASS Stylesheets
@@ -21,7 +20,7 @@ const Header = (props) => {
     return (
         <div id="header">
             <div className="header-content">
-                <h1>myACC</h1>
+                <img src={require('../../assets/images/acc-logo-mobile.png')} width="100" height="48" alt="ACC logo" />
             </div>
         </div>
     );

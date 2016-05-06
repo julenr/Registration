@@ -11,7 +11,6 @@
 //
 //
 
-
 import React from 'react';
 
 // SASS Stylesheets
@@ -27,9 +26,11 @@ const Footer = (props) => {
                 <div className="footer-link"><a href="javascript:void 0">Contact Us</a>&nbsp;&nbsp;</div>
                 {
                     props.LoggedIn ?
-                        <a href="javascript:void 0" onClick={() => props.logout()}>
-                          Logout
-                        </a>
+                        <div className="footer-link">
+                            <a href="javascript:void 0" onClick={() => props.logout()}>
+                                Logout
+                            </a>
+                        </div>
                     :
                         null
                 }

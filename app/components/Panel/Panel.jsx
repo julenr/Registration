@@ -11,15 +11,13 @@
 //
 //
 
-
 import React from 'react';
 import classNames from 'classnames';
 
 // SASS Stylesheets
 import './panel.scss';
 
-
-function Panel (props) {
+const Panel = (props) => {
     let PanelClasses = classNames(props.className, {
         'panel': true,
         'active': props.PanelActive
@@ -36,6 +34,6 @@ function Panel (props) {
         </nav>
       </span>
     );
-}
+};
 
 export default Panel;

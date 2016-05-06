@@ -11,7 +11,6 @@
 //
 //
 
-
 import React from 'react';
 
 // SASS Stylesheets
@@ -45,18 +44,32 @@ const CoverDetails = (props) => {
                     })}
                 </select>
             </div>
-            <div className="form-field">
-                <label for="acc-levy">ACC LEVY CALSSIFICATION (CU)</label>
-                <input type="text" name="acc-levy" value={props.LevyClassification} />
+            <div className="form-field input-plus-button-wrapper">
+                <label for="acc-levy">ACC LEVY CLASSIFICATION (CU)</label>
+                <input className="input-plus-button-box"
+                        type="text" name="acc-levy"
+                        value={`${props.LevyClassification.code} - ${props.LevyClassification.title}`}
+                        onChange={(elm) => setCUValue(elm, props)}
+                />
+                <a href="javascript:void 0" className="input-plus-button-icon fa fa-chevron-right"
+                    onClick={() => setPanelContent(props, 'LevySearch')}>
+                </a>
             </div>
             <p>
-                This is based on the <a href="javascript:void 0" onClick={() => setPanelContent(props, 'ACCCover')}>BIC code</a>&nbsp; you provided to IRD and determines the rate you will pay in levies.
+                This is based on the&nbsp;
+                <a href="javascript:void 0" onClick={() => setPanelContent(props, 'ACCCover')}>BIC code</a>
+                &nbsp; you provided to IRD and determines the rate you will pay in levies.
             </p>
+            <br />
             <div className="form-field center">
                 <button className="acc-button" onClick={() => props.checkLogin()}>Confirm/update my details</button>
             </div>
         </div>
     );
+};
+
+const setCUValue = (elm, props) => {
+    // props.setCurrentSearchCUValue(elm.target.value);
 };
 
 const setPanelContent = (props, content) => {

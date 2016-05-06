@@ -1,12 +1,34 @@
+//
+//
+//              Created by
+//            __ _____ __    _____ _____    _____ _____    __ _____
+//         __|  |  |  |  |  |   __|   | |  | __  |     |__|  |     |
+//        |  |  |  |  |  |__|   __| | | |  |    -|  |  |  |  |  |  |
+//        |_____|_____|_____|_____|_|___|  |__|__|_____|_____|_____|
+//
+//                on 03/05/2016
+//                   isusk246@gmail.com
+//
+//
+/*
+	ACC Main Styles
+	Last updated: See GIT/SVN
+  ----------------------------------
+*/
 
+@import "fonts.scss";
+@import "variables.scss";
+@import "mixins.scss";
 
 body {
   margin: 0;
-  background-color: lightgrey;
+  background-color: $acc_gray_1;
+  font-family: Roboto;
 }
 
-label {
+.form-field label {
   display: block;
+  font-weight: bold;
 }
 
 .form-field {
@@ -18,7 +40,7 @@ label {
   text-align: center;
 }
 
-input[type="text"], select {
+.form-field input[type="text"], select {
   padding: 10px;
   width: 100%;
 }
@@ -32,10 +54,10 @@ input[type="text"], select {
   display: inline-block;
   margin: 4px;
   padding: 12px 24px;
-  color: #67b5d1;
+  color: $acc_blue_2;
   background: none;
   font-size: 14px;
-  border: solid 2px #67b5d1;
+  border: solid 2px $acc_blue_1;
   box-shadow: none;
   border-radius: 20px;
   appearance: none;
@@ -49,4 +71,25 @@ input[type="text"], select {
 .acc-button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+
+// Input with right button
+.input-plus-button-wrapper {
+	position: relative;
+}
+.input-plus-button-box {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	padding-right: 38px !important;
+}
+.input-plus-button-icon {
+	position:absolute;
+	font-size: 1.2rem !important;
+	padding: 12px 10px 10px 10px;
+	background-color: transparent;
+	border:1px solid transparent;
+	display: inline-block;
+	right: 0;
+	text-decoration: none;
 }

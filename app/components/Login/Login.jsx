@@ -11,7 +11,6 @@
 //
 //
 
-
 import React from 'react';
 
 // SASS Stylesheets
@@ -41,7 +40,7 @@ const Login = (props) => {
             <div className="form-field">
                 <label>
                     <input type="checkbox" name="accept" />
-                    I accept the ACC&nbsp;
+                    &nbsp;I accept the ACC&nbsp;
                     <a href="javascript:void 0" onClick={() => setPanelContent(props, 'TermsOfUse')}>Terms of use</a>
                 </label>
             </div>

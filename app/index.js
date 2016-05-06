@@ -11,6 +11,11 @@
 //
 //
 
+// Stylesheets
+import 'normalize.css';
+import './styles/screen.scss';
+import './styles/font-awesome/scss/font-awesome.scss';
+
 // ES6 Polyfill
 import 'babel-polyfill';
 
@@ -24,9 +29,6 @@ import { Provider } from 'react-redux';
 
 // Custom components
 import App from './components/App';
-
-// Stylesheets
-import './styles/screen.scss';
 
 // Element to attach React-DOM
 const app = document.createElement('div');

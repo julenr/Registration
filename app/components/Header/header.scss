@@ -1,13 +1,15 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 #header {
   padding:20px;
-  margin:0;
   width: auto;
-  background-color: lightblue;
+  background-color: $acc_blue_1;
 }
 
 .header-content {
   max-width: 1200px;
+  padding-bottom: 10px;
 }
 @media all and (min-width: 425px) {
   .header-content {
