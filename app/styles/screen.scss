@@ -16,7 +16,6 @@
   ----------------------------------
 */
 
-@import "fonts.scss";
 @import "variables.scss";
 @import "mixins.scss";
 
@@ -26,6 +25,10 @@ body {
   font-family: Roboto;
 }
 
+.hide {
+  display: none;
+}
+
 .form-field label {
   display: block;
   font-weight: bold;
@@ -33,16 +36,27 @@ body {
 
 .form-field {
   margin-bottom: 20px;
-  max-width: 290px;
+  max-width: 320px;
   width:93%;
 }
 .form-field.center {
   text-align: center;
 }
 
-.form-field input[type="text"], select {
+.form-field input[type="text"], .form-field textarea, .form-field select {
+  box-sizing: border-box;
+  font-size: 1rem;
   padding: 10px;
   width: 100%;
+}
+
+.form-field textarea {
+  resize: none;
+  font-family: Roboto;
+}
+
+.selectable {
+  cursor: pointer;
 }
 
 /* -----------------------------------------------------------------------------
@@ -54,14 +68,19 @@ body {
   display: inline-block;
   margin: 4px;
   padding: 12px 24px;
-  color: $acc_blue_2;
-  background: none;
-  font-size: 14px;
+  color: white;
+  background: $acc_blue_1;
+  font-size: .9rem;
   border: solid 2px $acc_blue_1;
   box-shadow: none;
   border-radius: 20px;
   appearance: none;
   cursor: pointer;
+}
+
+.acc-button:active {
+  background: none;
+  color: $acc_blue_1;
 }
 
 .acc-button:focus {
@@ -83,13 +102,23 @@ body {
 	padding: 10px;
 	padding-right: 38px !important;
 }
+// For divs pretending to be inputs
+div .input-plus-button-box {
+  display: inline-block;
+  border: solid 1px;
+  border-color: rgb(169,169,169);
+}
 .input-plus-button-icon {
 	position:absolute;
-	font-size: 1.2rem !important;
-	padding: 12px 10px 10px 10px;
+	font-size: 1.3rem !important;
+	padding: 10px 10px 10px 10px;
 	background-color: transparent;
 	border:1px solid transparent;
+  color: $acc_blue_1;
 	display: inline-block;
 	right: 0;
 	text-decoration: none;
+}
+.black-text {
+  color: black;
 }

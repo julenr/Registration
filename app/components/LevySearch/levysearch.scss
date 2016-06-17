@@ -28,9 +28,13 @@
   padding-right: 25px;
 	color: white;
 	text-decoration: none;
+	font-size: 1.8rem !important;
 }
 
 #cu-search {
 	color: white;
 	background-color: $acc_blue_5;
+	box-sizing: border-box;
+	max-height: 40px;
 }
+

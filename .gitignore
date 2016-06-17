@@ -1,6 +1,9 @@
-/WEB-INF/jsp/index.jsp
 public
 build
 build-develop
 .idea
-node_modules
+version.txt
+npm-debug.log
+!node_modules
+node_modules/*
+!node_modules/node-sass

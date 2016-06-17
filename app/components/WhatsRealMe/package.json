@@ -1,0 +1,6 @@
+{
+  "name": "WhatsRealMe",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./WhatsRealMe.jsx"
+}

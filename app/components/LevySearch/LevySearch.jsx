@@ -19,11 +19,11 @@ import './levysearch.scss';
 const LevySearch = (props) => {
     return (
         <div className="levy-wrapper">
-            <div className="sub-header">
-                <a href="#" className="chevron fa fa-chevron-left" onClick={props.switchPanel}/>
+            <div className="sub-header" id="searchCUSubHeader">
+                <a href="javascript: void 0" className="chevron octicon octicon-chevron-left" onClick={props.switchPanel}/>
                 ACC Levy Classification (CU)
             </div>
-            <div className="levy-content">
+            <div className="levy-content" id="searchCUBody">
                 <p>
                     Your ACC Levy Classification (CU) is defined by your Business industry description
                     (BIC) and determines the rate you will pay in levies. The rates vary depending on your
@@ -31,22 +31,17 @@ const LevySearch = (props) => {
                 </p>
                 <p>
                     Your current CU is:<br />
-                    <strong>{`${props.LevyClassification.code} - ${props.LevyClassification.title}`}</strong>
-                </p>
-                <p>
-                    You can browse the activity description for Real estate services
-                </p>
-                <p>
-                    or you can
+                    <strong>{`${props.LevyClassificationCode} - ${props.LevyClassificationDescription}`}</strong>
                 </p>
                 <div className="form-field input-plus-button-wrapper">
-                    <label for="acc-levy">SEARCH FOR YOUR CODE</label>
+                    <label id="searchCUSearchBoxLabel" for="searchCUSearchBox">SEARCH FOR YOUR BUSINESS DESCRIPTION</label>
                     <input className="input-plus-button-box" type="text"
                         onChange={(elm) => setSearchCUValue(elm, props) }
-                        name="acc-levy" placeholder="Enter keyword or code"
+                        onKeyPress={(e) => enterSearchCU(e, props)}
+                        id="searchCUSearchBox" name="acc-levy-classification" placeholder="Enter keyword or code"
                         defaultValue={props.SearchCUValue}
                     />
-                    <a href="javascript:void 0" id="cu-search" className="input-plus-button-icon fa fa-search"
+                    <a href="javascript:void 0" id="cu-search" className="input-plus-button-icon octicon octicon-search"
                         onClick={() => searchCU(props)}>
                     </a>
                 </div>
@@ -55,18 +50,27 @@ const LevySearch = (props) => {
                     for example 'clothing retailing' not 'retailing'.
                 </p>
                 <p>
-                    If you are self-employed, describe what you do, for example
+                    <strong>OR</strong>
+                </p>
+
+                <p>
+                    Describe what you do, for example
                     'dairy farming' not 'dairy farmer'.
                 </p>
-                <a href="javascript void 0">Need more help</a><br />
             </div>
         </div>
     );
 };
 
 const searchCU = (props) => {
-    props.searchCU();
-    props.panelContent('LevySearchResult');
+    props.searchCU(props.SearchCUValue, props.BICHost);
+    props.panelContent('LevySearchResults');
+};
+
+const enterSearchCU = (e,props) => {
+    if( e.key == 'Enter' ) {
+        searchCU(props);
+    }
 };
 
 const setSearchCUValue = (elm, props) => {

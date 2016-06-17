@@ -8,3 +8,14 @@
 a {
   color: $acc_blue_2;
 }
+
+p.error {
+	border: 2px solid $acc_red_1;
+	font-weight: bold;
+	padding: 10px;
+}
+
+p.error span {
+	color: $acc_red_1;
+	float: right; 
+}

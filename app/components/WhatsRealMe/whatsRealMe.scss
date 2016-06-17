@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.whatrealme-container {
+  overflow: hidden;
+  height: 100%;
+}
+
+.whatrealme-body {
+  padding: 20px;
+}
+
+.sub-header {
+  width: 100%;
+  color: white;
+  background-color: $acc_blue_5;
+  padding: 10px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+.realme_popup_title,
+.realme_popup h2 {
+  font-size: 1.07692em;
+  color: #e1001e;
+  margin-bottom: 0.5em;
+}
+
+.realme_find_out_more {
+  display: inline-block;
+  padding-right: 1em;
+}
+
+.realme_icon_find_out_more {
+  top: 0.35em;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  background-image: url('../../assets/images/realme/icon-new-window-blue.png');
+}

@@ -1,7 +1,9 @@
-
-import { createStore, applyMiddleware,} from 'redux';
+import { createStore, applyMiddleware, compose} from 'redux';
 import createLogger from 'redux-logger';
 import promiseMiddleware from 'redux-promise-middleware';
+if (__LOCAL_DEV__){
+  var devTools = require('remote-redux-devtools');
+}
 
 import reducer from './reducers/index';
 
@@ -22,9 +24,40 @@ const loggerOptions = {
 };
 
 const logger = createLogger(loggerOptions);
-const store = createStore(
-  reducer,
-  applyMiddleware(promiseMiddleware(), logger)
-);
 
-export default store;
+var store;
+
+const catchPromiseRejections = store => next => action => {
+  const result = next(action);
+  if (result instanceof Promise) {
+    result.catch(function(){
+      // do nothing
+    });
+  }
+  return result;
+};
+
+let Store = {
+  configureStore : function (initialState) {
+    var middleware = (__DEBUG__) ? applyMiddleware(catchPromiseRejections, promiseMiddleware(), logger) : applyMiddleware(catchPromiseRejections, promiseMiddleware());
+    var enhancer;
+    if(__LOCAL_DEV__) {
+      enhancer = compose(
+        middleware,
+        devTools({
+          name: 'MyACC Business Cover', realtime: true
+          })
+      );
+    } else {
+      enhancer = compose( middleware );
+    }
+    // Note: passing enhancer as last argument requires redux@>=3.1.0
+    store = createStore(reducer, initialState, enhancer);
+    return store;
+  },
+  dispatch: function(action) {
+    store.dispatch(action);
+  }
+};
+
+export {Store as default};

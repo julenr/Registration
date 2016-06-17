@@ -18,9 +18,9 @@ import './header.scss';
 
 const Header = (props) => {
     return (
-        <div id="header">
-            <div className="header-content">
-                <img src={require('../../assets/images/acc-logo-mobile.png')} width="100" height="48" alt="ACC logo" />
+        <div className="header">
+            <div className="header-content logo">
+                <h1>{props.PageHeader}</h1>
             </div>
         </div>
     );

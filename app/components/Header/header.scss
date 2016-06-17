@@ -1,19 +1,42 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
-#header {
-  padding:20px;
+$completeLogo: '../../assets/images/acc-full-logo.svg';
+$letterLogo: '../../assets/images/acc-letters.svg';
+
+.header {
+  padding:10px;
   width: auto;
   background-color: $acc_blue_1;
-}
-
-.header-content {
-  max-width: 1200px;
-  padding-bottom: 10px;
-}
-@media all and (min-width: 425px) {
-  .header-content {
-    width: 90%;
-    margin: auto;
+  &-content {
+    max-width: 1200px;
+    height: 40px;
+    padding-bottom: 10px;
+    background: url($letterLogo) left center/70px no-repeat;
+    @media all and (min-width: 390px) {
+      width: 90%;
+      margin: auto;
+      height: 90px;
+      background-size: 90px;
+    }
+    @media all and (min-width: 500px) {
+      height: 140px;
+      background: url($completeLogo) left center/contain no-repeat;
+    }
+    & h1 {
+    	color: white;
+      margin-left: 110px;
+    	display: inline-block;
+    	font-size: 1.4rem;
+    	font-weight: normal;
+      @media all and (min-width: 390px) {
+        margin-left: 140px;
+      	font-size: 1.5rem;
+      }
+      @media all and (min-width: 500px) {
+        margin-left: 170px;
+        font-size: 1.7rem;
+      }
+    }
   }
 }

@@ -1,0 +1,6 @@
+{
+  "name": "Classification",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./Classification.jsx"
+}

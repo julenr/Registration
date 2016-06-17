@@ -11,27 +11,32 @@
 //
 //
 
-
-
-
 module.exports = function karmaConfig (config) {
   config.set({
     basePath: '',
     frameworks: [
-      'mocha', 'chai'
+      'mocha', 'chai-as-promised', 'chai', 'sinon'
     ],
     reporters: [
       'spec',
       'coverage'
     ],
+    client: {
+      captureConsole: true
+    },
     files: [
-      'angular/index.js',
-      'node_modules/angular-mocks/angular-mocks.js',
-      'angular/**/*.test.js'
+      'app/**/*.test.js'
     ],
     preprocessors: {
-      'angular/index.js': ['webpack', 'sourcemap'],
-      'angular/**/*.test.js': ['webpack', 'sourcemap']
+      'app/**/*.test.js': ['webpack', 'sourcemap']
+    },
+    webpack: require('./webpack.config'),
+    webpackServer: { noInfo: true },
+    webpackMiddleware: { noInfo: true},
+    babelPreprocessor: {
+      options: {
+        presets: ['airbnb']
+      }
     },
     colors: true,
     browsers: [
@@ -41,10 +46,6 @@ module.exports = function karmaConfig (config) {
     coverageReporter: {
       dir: 'build/coverage/',
       type: 'html'
-    },
-    webpack: require('./webpack.config'),
-    webpackMiddleware: {
-      noInfo: true
     }
   });
 };

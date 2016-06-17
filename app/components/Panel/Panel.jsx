@@ -28,7 +28,7 @@ const Panel = (props) => {
     });
     return (
       <span>
-        <div className={ MaskClasses } onClick={ props.maskPanelClick } />
+        
         <nav className={ PanelClasses }>
           {props.children}
         </nav>

@@ -1,0 +1,6 @@
+{
+  "name": "LevySearchResults",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./LevySearchResults.jsx"
+}

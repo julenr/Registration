@@ -17,12 +17,29 @@
   }
 }
 
-.footer-link {
-  display:inline-block;;
-  width: 20%;
-  margin:auto;
+@media (max-width: 768px) {
+  .footer-link {
+    display: inline-block;;
+    width: 33%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-link {
+    display: inline-block;;
+    width: 20%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 }
 .footer-link a, .footer-link a:visited {
   font-size: 0.9rem;
   color: $acc_blue_2;
+}
+
+.govt-footer-link {
+  font-size: 0.9rem;
+  color: grey;
 }
